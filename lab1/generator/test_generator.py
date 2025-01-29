@@ -6,9 +6,9 @@ enc = 'cp1251'
 
 class Accountant:
 	def __init__(self):
-		all_full_names = open('fullnames.txt', mode='r', encoding='utf-8').read().splitlines()
-		all_job_titles = open('job_titles.txt', mode='r', encoding='utf-8').read().splitlines()
-		all_subdivisions = open('subdivisions.txt', mode='r', encoding='utf-8').read().splitlines()
+		all_full_names = open('./generator/fullnames.txt', mode='r', encoding='utf-8').read().splitlines()
+		all_job_titles = open('./generatorjob_titles.txt', mode='r', encoding='utf-8').read().splitlines()
+		all_subdivisions = open('./generatorsubdivisions.txt', mode='r', encoding='utf-8').read().splitlines()
 		self.full_name = random.choice(all_full_names)
 		self.job_title = random.choice(all_job_titles)
 		self.subdivision = random.choice(all_subdivisions)
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 			test_size = random.randint(100, 1000) * (test_number + 1)
 		else:
 			test_size = random.randint(10, 20)
-		with open(f'../tests/test_{test_number}.txt', 'w', encoding=enc, errors='replace') as f:
+		with open(f'./tests/test_{test_number}.txt', 'w+', encoding=enc, errors='replace') as f:
 			f.write(str(test_size) + '\n')
 			for i in range(test_size):
 				obj = Accountant()

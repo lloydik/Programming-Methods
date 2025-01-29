@@ -7,7 +7,7 @@ generate: ./generator/test_generator.py
 	rm -rf tests && mkdir tests && ./generator/test_generator.py
 
 analyse: ./output/lab1
-	rm -rf results && mkdir results && ls output | wc -l | xargs ./output/lab1
+	rm -rf results && mkdir results && ls output | wc -l | xargs -I {} ./output/lab1 {}
 
 docs:
 	doxygen
