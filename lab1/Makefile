@@ -13,4 +13,4 @@ docs:
 	doxygen
 
 graphics:
-	python3 -m pip install -r ./graphics/requirements.txt && ./graphics/graphics.py
+	./graphics/graphics.py
