@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
 
-analytics_file = '../analytics.txt'
+analytics_file = './analytics.txt'
 
 with open(analytics_file) as f:
 	data = list(map(str.split, map(str.strip, f.readlines())))

@@ -12,5 +12,5 @@ analyse: ./output/lab1
 docs:
 	doxygen
 
-graphics:
+draw_graphics: ./graphics/graphics.py
 	./graphics/graphics.py
