@@ -96,7 +96,7 @@ std::istream& operator >> (std::istream& is, Accountant& account)
     return is;
 }
 
-/**
+/*!
  * @brief Чтение из файла
  *
  * Функция, считывающая данные из файла в массив
@@ -121,7 +121,8 @@ void readFromFile(std::fstream& myFile, Accountant accountants[], unsigned int s
     }
 }
 
-/**
+template<class T>
+/*!
  * @brief Сортировка вставками
  *
  * Просто функция сортировки вставками
@@ -131,7 +132,6 @@ void readFromFile(std::fstream& myFile, Accountant accountants[], unsigned int s
  *
  * @return Ничего. Массив сортируется внутри
  */
-template<class T>
 void insertionSort(T a[], long size)
 {
     for (long i = 0; i < size; ++i)
@@ -145,7 +145,9 @@ void insertionSort(T a[], long size)
     }
 }
 
-/**
+
+template<class T>
+/*!
  * @brief Шейкер-Сортировка
  *
  * Функция Шейкер-сортировки
@@ -155,8 +157,6 @@ void insertionSort(T a[], long size)
  *
  * @return Ничего. Массив сортируется внутри
  */
-
-template<class T>
 void shakerSort(T a[], long size)
 {
     size_t k = size - 1, j;
@@ -192,7 +192,8 @@ void shakerSort(T a[], long size)
     } while (lb < ub);
 }
 
-/**
+template<class T>
+/*!
  * @brief Вспомогательная функция слияния
  *
  * В этой функции идёт слияние двух массивов (хоть он и один, но его можно представить как 2, разделённых индексом mid) в один отсортированный
@@ -204,7 +205,6 @@ void shakerSort(T a[], long size)
  *
  * @return Ничего. Массив сортируется внутри
  */
-template<class T>
 void merge(T a[], long low, long mid, long high)
 {
     T* b = new T[high + 1 - low];
@@ -255,7 +255,8 @@ void merge(T a[], long low, long mid, long high)
     delete[] b;
 }
 
-/**
+template<class T>
+/*!
  * @brief Сортировка слиянием
  *
  * Просто функция сортировки вставками
@@ -265,7 +266,6 @@ void merge(T a[], long low, long mid, long high)
  *
  * @return Ничего. Массив сортируется внутри
  */
-template<class T>
 void mergeSort(T a[], long low, long high)
 {
     if (low < high)
@@ -284,7 +284,8 @@ void mergeSortAdapter(T a[], long size)
 }
 
 
-/**
+template<class T>
+/*!
  * @brief Подсчёт времени
  *
  * Функция для вычисления времени работы алгоритма
@@ -295,7 +296,6 @@ void mergeSortAdapter(T a[], long size)
  *
  * @return Время работы алгоритма
  */
-template<class T>
 double calc_algo_time(void (*func)(T[], long), T a[], long size)
 {
     clock_t start = clock();
