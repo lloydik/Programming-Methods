@@ -9,7 +9,7 @@ generate: ./generator/test_generator.py
 analyse: ./output/lab1
 	rm -rf results && mkdir results && ls tests | wc -l | xargs -I {} ./output/lab1 {}
 
-docs:
+make_docs:
 	doxygen
 
 draw_graphics: ./graphics/graphics.py

@@ -161,9 +161,22 @@ void shakerSort(T a[], long size)
 {
     size_t k = size - 1, j;
     T tmpObj;
-    size_t lb = 1, ub = size - 1;
+    size_t lb = 0, ub = size - 1;
     do
     {
+        for (j = ub; j > 0; j--)
+        {
+            if (a[j - 1] > a[j])
+            {
+                tmpObj = a[j];
+                a[j] = a[j - 1];
+                a[j - 1] = tmpObj;
+                k = j;
+            }
+        }
+
+        lb = k + 1;
+
         for (j = lb; j <= ub; j++)
         {
             if (a[j - 1] > a[j])
@@ -176,19 +189,6 @@ void shakerSort(T a[], long size)
         }
 
         ub = k - 1;
-
-        for (j = ub; j > lb; j--)
-        {
-            if (a[j - 1] > a[j])
-            {
-                tmpObj = a[j];
-                a[j] = a[j - 1];
-                a[j - 1] = tmpObj;
-                k = j;
-            }
-        }
-
-        lb = k + 1;
     } while (lb < ub);
 }
 
@@ -283,6 +283,12 @@ void mergeSortAdapter(T a[], long size)
     mergeSort(a, 0, size - 1);
 }
 
+template<class T>
+void stdSortAdapter(T a[], long size)
+{
+    std::sort(a, a+size);
+}
+
 
 template<class T>
 /*!
@@ -304,6 +310,62 @@ double calc_algo_time(void (*func)(T[], long), T a[], long size)
     return (double)(end - start) / (double)(CLOCKS_PER_SEC);
 }
 
+/*!
+ * @brief Функция открытия файла
+ *
+ * Функция для вычисления времени работы алгоритма
+ *
+ * @param outFile Поток для открытия файла
+ * @param filename Имя файла для открытия
+ *
+ * @return 500, если ошибка, иначе 0
+ */
+int openOutFile(std::fstream& outFile, std::string& filename)
+{
+    outFile.open(filename, std::ios::out);
+    if (!outFile)
+    {
+        std::cerr << "Unable to open output file: " << filename;
+        return 500;
+    }
+    return 0;
+}
+
+/*!
+ * @brief Функция записи в файл
+ *
+ * Функция для записи в файл
+ *
+ * @param outFile Файловый поток для записи
+ * @param a Массив, который надо записать
+ * @param sample_size Размер массива
+ *
+ * @return Ничего
+ */
+template<class T>
+void writeToFile(std::fstream& outFile, T* a, long sample_size)
+{
+    for (int i = 0; i < sample_size; ++i)
+        outFile << "Сотрудник " << i + 1 << ": " << a[i] << std::endl;
+}
+
+/*!
+ * @brief Структура для алгоритмов
+ *
+ * Функция для записи в файл
+ *
+ * @param name Файловый поток для записи
+ * @param func Функция алгоритма
+ * @param fileStream Файловый поток для вывода алгоритма
+ *
+ */
+struct algoInfo {
+    std::string name;
+    void (*func)(Accountant[], long);
+    std::fstream& fileStream;
+    algoInfo(std::string name, void (*func)(Accountant[], long), std::fstream& fileStream) : name(name), func(func), fileStream(fileStream){}
+};
+
 int main(int argc, char* argv[])
 {
     if (argc != 2)
@@ -316,7 +378,6 @@ int main(int argc, char* argv[])
     std::fstream analyticsFile;
     std::string analyticsFilename = "analytics.txt";
     analyticsFile.open(analyticsFilename, std::ios::out);
-
     for (int test_id = 0; test_id < std::stoi(argv[1]); ++test_id)
     {
         std::fstream inFile;
@@ -328,16 +389,18 @@ int main(int argc, char* argv[])
             return 500;
         }
 
-        std::fstream outFile;
-        std::string outFilename = "results/result_" + std::to_string(test_id) + ".txt";
-        outFile.open(outFilename, std::ios::out);
-        if (!outFile)
+        std::fstream outFileA, outFileB, outFileC, outFileReal;
+        std::string outFilenameA = "results/result_a_" + std::to_string(test_id) + ".txt";
+        std::string outFilenameB = "results/result_b_" + std::to_string(test_id) + ".txt";
+        std::string outFilenameC = "results/result_c_" + std::to_string(test_id) + ".txt";
+        std::string outFilenameReal = "results/result_real_" + std::to_string(test_id) + ".txt";
+        if(openOutFile(outFileA, outFilenameA) == 500 || openOutFile(outFileB, outFilenameB) == 500 || openOutFile(outFileC, outFilenameC) == 500 || openOutFile(outFileReal, outFilenameReal) == 500)
         {
-            std::cerr << "Unable to open output file: " << outFilename;
+            std::cerr << "UNABLE TO OPEN FILE" << std::endl;
             return 500;
         }
 
-        unsigned int sample_size;
+        unsigned int sample_size = 0;
         inFile >> sample_size;
         inFile.ignore(); // Чтобы пропустить символ переноса строки из буффера
         Accountant* accountants = new Accountant[sample_size];
@@ -347,39 +410,19 @@ int main(int argc, char* argv[])
 
         // Создаём бэкап для восстановления массива
         std::copy(accountants, accountants + sample_size, accountantsBackup);
-
-        // Считаем время сортировки вставками
-        double insertion_algo_time = calc_algo_time(insertionSort, accountants, sample_size);
-        std::cout << "Сортировка ВСТАВКАМИ под номером " << test_id << " " << sample_size << " элементов " << " заняла: " << insertion_algo_time << " секунд" << std::endl;
-
-        // Возвращаем исходный массив
-        std::copy(accountantsBackup, accountantsBackup + sample_size, accountants);
-
-        // Считаем время Шейкер-сортировки
-        double shaker_algo_time = calc_algo_time(shakerSort, accountants, sample_size);
-        std::cout << "Шейкер-сортировка под номером " << test_id << " " << sample_size << " элементов " << " заняла: " << shaker_algo_time << " секунд" << std::endl;
-
-        // Возвращаем исходный массив
-        std::copy(accountantsBackup, accountantsBackup + sample_size, accountants);
-
-        // Считаем время сортировки слиянием
-        double merge_algo_time = calc_algo_time(mergeSortAdapter, accountants, sample_size);
-        std::cout << "Сортировка слиянием под номером " << test_id << " " << sample_size << " элементов " << " заняла: " << merge_algo_time << " секунд" << std::endl;
-
-        std::copy(accountantsBackup, accountantsBackup + sample_size, accountants);
-
-        clock_t start = clock();
-        std::sort(accountants, accountants+sample_size);
-        clock_t end = clock();
-        double real_time = (double)(end - start) / (double)(CLOCKS_PER_SEC);
-
-        std::cout << "Встроенная сортировка под номером " << test_id << " " << sample_size << " элементов " << " заняла: " << real_time << " секунд" << std::endl << std::endl;
-
-        analyticsFile << sample_size << " " << insertion_algo_time << " " << shaker_algo_time << " " << merge_algo_time << " " << real_time << std::endl;
-
-        for (int i = 0; i < sample_size; ++i)
-            outFile << "Сотрудник " << i + 1 << ": " << accountants[i] << std::endl;
-
+        std::vector<algoInfo> algos_arr = {algoInfo("Сортировка ВСТАВКАМИ", insertionSort, outFileA), algoInfo("Шейкер-сортировка", shakerSort, outFileB), algoInfo("Сортировка слиянием", mergeSortAdapter, outFileC), algoInfo("Встроенная сортировка", stdSortAdapter, outFileReal)};
+        analyticsFile << sample_size;
+        for(int i = 0; i < algos_arr.size(); ++i)
+        {
+            // Считаем время сортировки
+            double algo_time = calc_algo_time(algos_arr[i].func, accountants, sample_size);
+            std::cout << algos_arr[i].name << " под номером " << test_id << " " << sample_size << " элементов " << " заняла: " << algo_time << " секунд" << std::endl;
+            writeToFile(algos_arr[i].fileStream, accountants, sample_size);
+            analyticsFile << " " << algo_time;
+            // Возвращаем исходный массив
+            std::copy(accountantsBackup, accountantsBackup + sample_size, accountants);
+        }
+        analyticsFile << std::endl;
         delete [] accountantsBackup;
         delete [] accountants;
     }
