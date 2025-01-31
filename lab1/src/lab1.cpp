@@ -161,10 +161,10 @@ void shakerSort(T a[], long size)
 {
     size_t k = size - 1, j;
     T tmpObj;
-    size_t lb = 0, ub = size - 1;
+    size_t lb = 1, ub = size - 1;
     do
     {
-        for (j = ub; j > 0; j--)
+        for (j = ub; j >= lb; j--)
         {
             if (a[j - 1] > a[j])
             {
