@@ -9,3 +9,5 @@ docs/
 tests/
 results/
 analytics.txt
+.ai/
+.vscode/
