@@ -1,0 +1,11 @@
+[3/5/2025, 9:43:46 PM] info: Logging was started to file.
+[3/5/2025, 9:43:46 PM] info: Start application inspector initialization
+[3/5/2025, 9:43:46 PM] info: Hide developer mode UI
+[3/5/2025, 9:43:47 PM] info: Infrastructure Configurations: {"port":8000,"infrastructureAssemblyFolderPath":"C:\\Users\\artem\\AppData\\Local\\Application Inspector Analyzer","applicationResourcesFolderPath":"C:\\Users\\artem\\AppData\\Local\\Application Inspector Analyzer","scanTargetFolderPath":"c:\\Users\\artem\\OneDrive\\Документы\\HSE\\PM\\lab2","isDebugging":false,"logLevel":{"q8_1":"Error","r8_1":5,"type":5,"key":"Settings.LogLevel.Error.Text"},"logDir":"c:\\Users\\artem\\OneDrive\\Документы\\HSE\\PM\\lab2\\.ai\\Logs\\Infrastructure\\2025-03-05-21-43-47","tipsFoundNotificationThreshold":1000,"similarIssuesFoundNotificationThreshold":1000,"applicationLocalDataFolderPath":"c:\\Users\\artem\\OneDrive\\Документы\\HSE\\PM\\lab2\\.ai"}
+[3/5/2025, 9:43:47 PM] info: Start infrastructure initialization
+[3/5/2025, 9:43:49 PM] info: Infrastructure was started
+[3/5/2025, 9:43:53 PM] info: Initialize aie integration isn't initialized
+[3/5/2025, 9:43:53 PM] info: Infrastructure was initialized
+[3/5/2025, 9:43:53 PM] info: Infrastructure Installer was deleted
+[3/5/2025, 9:43:53 PM] info: Clean up logs files was started
+[3/5/2025, 9:43:53 PM] info: Clean up logs files was finished
