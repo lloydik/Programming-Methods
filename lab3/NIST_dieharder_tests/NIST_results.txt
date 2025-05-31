@@ -1,0 +1,201 @@
+./NIST_dieharder_tests/test_all.sh
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/LCG_test.bin|  7.54e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 4 times
+rgb_minimum_distance|   0|     10000|    1000|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/LCG_test.bin|  7.43e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 28 times
+    rgb_permutations|   5|    100000|     100|0.00058759|   WEAK
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/LCG_test.bin|  7.42e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 52 times
+      rgb_lagged_sum|   0|   1000000|     100|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/LCG_test.bin|  7.18e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 9 times
+     rgb_kstest_test|   0|     10000|    1000|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/LCG_test.bin|  7.49e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 78 times
+     dab_bytedistrib|   0|  51200000|       1|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/QCG_test.bin|  7.43e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 4 times
+rgb_minimum_distance|   0|     10000|    1000|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/QCG_test.bin|  7.63e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 28 times
+    rgb_permutations|   5|    100000|     100|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/QCG_test.bin|  7.43e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 52 times
+      rgb_lagged_sum|   0|   1000000|     100|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/QCG_test.bin|  7.54e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 9 times
+     rgb_kstest_test|   0|     10000|    1000|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/QCG_test.bin|  7.67e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 78 times
+     dab_bytedistrib|   0|  51200000|       1|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/std_test.bin|  7.22e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 4 times
+rgb_minimum_distance|   0|     10000|    1000|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/std_test.bin|  7.56e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 28 times
+    rgb_permutations|   5|    100000|     100|0.11448688|  PASSED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/std_test.bin|  7.31e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 52 times
+      rgb_lagged_sum|   0|   1000000|     100|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/std_test.bin|  7.58e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 9 times
+     rgb_kstest_test|   0|     10000|    1000|0.76596171|  PASSED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/std_test.bin|  7.16e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 78 times
+     dab_bytedistrib|   0|  51200000|       1|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/XOR_test.bin|  4.50e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 4 times
+rgb_minimum_distance|   0|     10000|    1000|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/XOR_test.bin|  7.52e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 28 times
+    rgb_permutations|   5|    100000|     100|0.06247349|  PASSED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/XOR_test.bin|  7.37e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 52 times
+      rgb_lagged_sum|   0|   1000000|     100|0.00000000|  FAILED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/XOR_test.bin|  7.06e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 9 times
+     rgb_kstest_test|   0|     10000|    1000|0.02235494|  PASSED
+#=============================================================================#
+#            dieharder version 3.31.1 Copyright 2003 Robert G. Brown          #
+#=============================================================================#
+   rng_name    |           filename             |rands/second|
+ file_input_raw|./NIST_dieharder_tests/XOR_test.bin|  7.39e+06  |
+#=============================================================================#
+        test_name   |ntup| tsamples |psamples|  p-value |Assessment
+#=============================================================================#
+# The file file_input_raw was rewound 78 times
+     dab_bytedistrib|   0|  51200000|       1|0.00000000|  FAILED
