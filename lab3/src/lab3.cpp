@@ -47,6 +47,7 @@ public:
 
     unsigned long next() {
         r = (k1 * r * r + k2 * r + b) % m;
+        r = (r >> 13) | (r << (32 - 13));
         return r;
     }
 };
@@ -69,7 +70,7 @@ public:
 
 double lcg_adapter(std::vector<unsigned long>& result, unsigned long count)
 {
-    LCG lcg(time(NULL), 525287150, 736716860, 372322366);
+    LCG lcg(time(NULL), 525287150, 937402173, 836104618);
     while(result.size() != count)
         result.push_back(lcg.next());
     return 0.0;
